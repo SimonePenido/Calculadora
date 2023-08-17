@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <header>
+        <div class="header_logo">
+            <img src="img/icon.jpg" alt="Calculadora">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="h1">DOM - Document Object Model</h1>
+        <div id="div_main" class="conteudo">
+            <input type="number" name="texto1" id="texto1"  class="texto">
+            <input type="number" name="texto2" id="texto2"  class="texto">
+            <input type="button" value="-" id="botaoSubtrai" class="texto">
+            <input type="button" value="+" id="botaoSoma" class="texto">
+            <input type="button" value="*" id="botaoMultiplica" class="texto">
+            <input type="button" value="/" id="botaoDivide" class="texto">
+            <input type="button" value="CE" id="botaoCE" class="texto">
+            <div id="resultado">RESULTADO</div>
+        </div>
+    </main>
+
+    <footer>Simone Penido - {Elas Na Tech 2023♥}</footer>
+    
+    <script>
+
+        var botaoSubtrai = document.getElementById('botaoSubtrai');
+        botaoSubtrai.addEventListener('click', subtrair);
+        
+        var botaoSoma =document.getElementById('botaoSoma');
+        botaoSoma.addEventListener('click', somar)
+
+        var botaoMultiplica =document.getElementById('botaoMultiplica');
+        botaoMultiplica.addEventListener('click', multiplicar)
+
+        var botaoDivide =document.getElementById('botaoDivide');
+        botaoDivide.addEventListener('click', dividir)
+
+        var botaoCE =document.getElementById('botaoCE');
+        botaoCE.addEventListener('click', limpa)
+
+        function subtrair() {
+            var c1 = document.getElementById('texto1');
+            var c2 = document.getElementById('texto2');
+            var result = document.getElementById('resultado');
+
+            var num1 = parseFloat('c1.value');
+            var num2 = parseFloat('c2.value');
+
+            var resultado = num1 - num2;
+            result.innerText = "A subtração é: " + resultado.toFixed(2);
+        }
+
+        function somar(){
+            var c1 = document.getElementBy('texto1');
+            var c2 = document.getElementById('texto2');
+            var result = document.getElementById('resultado');
+
+            var num1 = parseFloat(c1.value);
+            var num2 = parseFloat(c2.value);
+
+            var resultado = num1 + num2;
+            result.innerText = "A soma é: " + resultado.toFixed(2);
+        }
+
+        function multiplicar(){
+            var c1 = document.getElementBy('texto1');
+            var c2 = document.getElementById('texto2');
+            var result = document.getElementById('resultado');
+
+            var num1 = parseFloat(c1.value);
+            var num2 = parseFloat(c2.value);
+
+            var resultado = num1 * num2;
+            result.innerText = "A multiplição é: " + resultado.toFixed(2);
+        }
+
+        function dividir(){
+            var c1 = document.getElementBy('texto1');
+            var c2 = document.getElementById('texto2');
+            var result = document.getElementById('resultado');
+
+            var num1 = parseFloat(c1.value);
+            var num2 = parseFloat(c2.value);
+
+            var resultado = num1 / num2;
+            result.innerText = "A divisão é: " + resultado.toFixed(2);
+        }
+
+        function limpa(){
+            document.getElementById('texto1').value = "";
+            document.getElementById('texto2').value = "";
+        }   document.getElementById('resultado').innerText = "Resultado";
+
+    </script>
+</body>
+</html>
